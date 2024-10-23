@@ -19,7 +19,7 @@ export default function exercises() {
   const router = useRouter();
   const item = useLocalSearchParams();
   console.log(item);
-  const [exercise, setExercises] = useState<any>(dummyData);
+  const [exercise, setExercises] = useState<any>("");
 
   const getExercise = async (bodyPart: any) => {
     console.log("Body part to fetch:", bodyPart);
@@ -28,9 +28,9 @@ export default function exercises() {
   };
 
   useEffect(() => {
-    // if (item) {
-    //   getExercise(item.name);
-    // }
+    if (item) {
+      getExercise(item.name);
+    }
   }, [item]);
 
   return (
